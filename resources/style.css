@@ -14,8 +14,6 @@
     box-sizing: border-box;
     font-family: Poppins;
     scroll-behavior: smooth;
-
-
 }
 
 
@@ -30,8 +28,6 @@
     background: url(bg.jpg);
     background-size: cover;
     background-position: center;
-
-
 }
 
 .infos{
@@ -49,7 +45,6 @@
     color: transparent;
     -webkit-text-stroke: 4px #fff;
     text-transform: uppercase;
-
 }
 
 .infos a{
@@ -61,7 +56,6 @@
     background: #1f41ff56;
     border-radius: 20px;
     transition: 0.5s;
-
 }
 
 .infos a:hover{
@@ -105,7 +99,16 @@
     
 
 }
-
+.rows{
+    width: var(--prop);
+    height: var(--prop);
+    /* background: #fff; */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 .row{
 
     width: 100%;
@@ -167,6 +170,7 @@
     height: 100%;
     width: 100%;
     display: flex;
+    z-index: 1;
     justify-content: space-between;
 
 }
@@ -236,4 +240,57 @@
 
     color: var(--color);
 
+}
+.base_win{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    
+}
+.win{
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 3px solid #48b0fe;
+    box-shadow: 0 0 10px #48b0fe, 0 0 30px #48b0fe;
+    border-radius: 20px;
+    
+}
+.win p{
+    color: var(--color);
+    font-weight: 500;
+    font-size: 70px;
+    text-shadow: 0 0 10px var(--color);
+}
+.win h1{
+    font-size: 40px;
+    
+}
+.win button{
+    margin-top:30px ;
+    width: 300px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid #48b0fe;
+    box-shadow: 0 0 10px #48b0fe, 0 0 2px #48b0fe;
+    background-color:transparent ;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+}
+.win button:hover{
+    background-color:#48b0fe ;
+    border: 2px solid #48b0fe;
+    box-shadow: 0 0 10px #48b0fe, 0 0 20px #48b0fe;
+    transition: 0.5s;
+}
+.win button:active{
+    scale: 1.2;
+    transition: 0.5s;
 }

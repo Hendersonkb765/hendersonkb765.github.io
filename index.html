@@ -24,9 +24,9 @@
 
         <div class="players">
 
-            <p style="--color: red;">Jogador 1</p>
+            <p style="--color: red;" id="player1" >Jogador 1</p>
 
-            <p style="--color: rgb(30, 255, 0);">Jogador 2</p>
+            <p style="--color: rgb(30, 255, 0); " id="player2">Jogador 2</p>
 
         </div>
 
@@ -37,37 +37,39 @@
                 <div class="barv" style="--nbar: 2;"></div>
 
             </div>
+            <div class="rows">
+                <div class="row" id="row1">
 
-            <div class="row" id="row1">
-
-                <div class="block p1" id="p1"><h1 class="mark" id="x" style="--color: red;">X</h1></div>
-                <div class="block p2" id="p2"><h1 class="mark" id="o" style="--color: rgb(30, 255, 0);">O</h1></div>
-                <div class="block p3"></div>
-
+                    <div class="block p1" id="p1" onclick="bloco_p1()"></div>
+                    <div class="block p2" id="p2" onclick="bloco_p2()"></div>
+                    <div class="block p3" onclick="bloco_p3()"></div>
+    
+                </div>
+               <div class="barh"></div>
+                <div class="row" id="row2">
+    
+                    <div class="block p4" onclick="bloco_p4()"></div>
+                    <div class="block p5" onclick="bloco_p5()"></div>
+                    <div class="block p6" onclick="bloco_p6()"></div>
+    
+                </div>
+                <div class="barh"></div>
+                <div class="row" id="row3">
+    
+                    <div class="block p7" onclick="bloco_p7()"></div>
+                    <div class="block p8" onclick="bloco_p8()"></div>
+                    <div class="block p9" onclick="bloco_p9()"></div>
+    
+                </div>
             </div>
-           <div class="barh"></div>
-            <div class="row" id="row2">
-
-                <div class="block p4"></div>
-                <div class="block p5"></div>
-                <div class="block p6"></div>
-
-            </div>
-            <div class="barh"></div>
-            <div class="row" id="row3">
-
-                <div class="block p7"></div>
-                <div class="block p8"></div>
-                <div class="block p9"></div>
-
-            </div>
+            
 
         </div>
 
     </div>
 
    
-    
+    <script src="resources/script.js"></script>
 
 </body>
 </html>
