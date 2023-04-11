@@ -2,7 +2,7 @@ let player1 = document.querySelector('#player1')
 let player2 = document.querySelector('#player2')
 let jogador = 1
 let htmljogador = document.querySelector('.jogador')
-
+let click = false
 let player1win ='<div class="base_win"><div class="win"><h1>Ganhador</h1> <p style="--color: red;"  class="active">Jogador 1</p><button click="replay()">Jogar</button>'
 +'</div></div>';
 let player2win = '<div class="base_win"><div class="win"><h1>Ganhador</h1>  <p style="--color: rgb(30, 255, 0); " class="active">Jogador 2</p><button click="replay()">Jogar</button>'
@@ -19,7 +19,6 @@ let game_screen = document.querySelector('.game_screen');
 
 function bloco_p1(){
     let elemento = event.target;
-    
     elemento.innerHTML=  marcar(elemento);
     verificarGanhador()
     verificarVez()
@@ -92,6 +91,7 @@ function replay(){
 function marcar(context){
     
     if(context.innerHTML == ''){
+        click = false
         if(jogador == 1 && ganhador== false){
             //jogador =2
             //htmljogador.textContent = jogador      
@@ -106,13 +106,13 @@ function marcar(context){
             
             return '<h1 class="mark" id="o" style="--color: rgb(30, 255, 0);">O</h1>'
         }
-        else{
-            return ''
-        }
+        
        
     }
     else{
+        click = true
         return context.innerHTML
+        
     }
 
 }
@@ -249,13 +249,13 @@ function limpar(){
     
 }
 function verificarVez(){
-  
-    if(jogador == 1){
+    alert(click)
+    if(jogador == 1 && click == false){
         player1.classList.remove('active')
         player2.classList.add('active')
         jogador =2 
     }
-    else{
+    else if(click == false){
         player2.classList.remove('active')
         player1.classList.add('active')
         jogador = 1
