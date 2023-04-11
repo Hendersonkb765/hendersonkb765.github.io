@@ -1,68 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --color: #000;
+    --prop: 700px;
+
+}
+
 *{
-    margin: 0px;
-    padding: 0px;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+    scroll-behavior: smooth;
+
 
 }
-@font-face{
-    font-family: giz;
-    src: url(Chalk-Regular.ttf);
-}
 
-.marcador{
-    font-size: 150px;
-    font-family: giz;
-}
-.jogador{
-    margin-left: 10px;
-}
-.bloco_jogador{
-    background-color: rgb(15, 74, 163);
-    width: 120px;
+
+.main_screen{
+
     display: flex;
-    padding: 10px;
-    border-radius: 20px;
-}
-body{
-    background-color: #4f584d    ;
-    height: 100%;
+    flex-direction: column;
     width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.infos{
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* padding: 0;
+    transform: translateY(-40px); */
+
+}
+.infos h1{
+
+    font-size: 9rem;
+    color: transparent;
+    -webkit-text-stroke: 4px #fff;
+    text-transform: uppercase;
+
+}
+
+.infos a{
+
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    padding: 15px 45px;
+    background: #1f41ff56;
+    border-radius: 20px;
+    transition: 0.5s;
+
+}
+
+.infos a:hover{
+
+    animation: btn 2s infinite ease-in-out;
+
+}
+
+@keyframes btn {
+    
+    0%, 100%{
+
+        background: rgb(0, 0, 71);
+
+    }
+
+    50%{
+
+        background: rgb(0, 0, 139);
+        
+    }
+
 
 
 }
-img{
-    width: 100px;
-}
-.jogo{
 
+
+
+
+
+.board{
+
+    width: var(--prop);
+    height: var(--prop);
+    position: relative;
+    /* background: #fff; */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+
+.row{
+
+    width: 100%;
+    height: calc((var(--prop) / 3) - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.block{
+
+    width: calc(var(--prop) / 3);
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
 
 }
-.bloco {
-    width: 100px;
-    height: 100px;
-    background-color: rgb(255, 255, 255);
-    margin: 5px;
-    text-align: center;
+
+.block h1{
+
+    font-size: 10rem;
+    color: var(--color);
+    transform: scale(0.5);
+    animation: mark 1s forwards ease;
+    opacity: 0;
+    pointer-events: none;
+
 }
-.linha-1{
-    display: flex;
+
+@keyframes mark{
+
+    to{
+
+        transform: scale(1);
+        text-shadow: 0 0 50px var(--color);
+        opacity: 1;
+
+    }
+
+}
+
+.barh{
+
     width: 100%;
+    height: 5px;
+    background: #48b0fe;
+    border: 3px solid #48b0fe;
+    box-shadow: 0 0 10px #48b0fe, 0 0 30px #48b0fe;
+    border-radius: 2px;
+    
+
 }
-.linha-2{
-    display: flex;
+
+.back{
+
+    position: absolute;
+    height: 100%;
     width: 100%;
-}
-.linha-3{
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+
 }
-.bloco:hover{
-    background-color: gray;
-    transition: 1s;
+
+.barv{
+
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    background: #48b0fe;
+    border: 3px solid #48b0fe;
+    box-shadow: 0 0 10px #48b0fe, 0 0 30px #48b0fe;
+    border-radius: 2px;
+    margin-left: calc((var(--prop) / 3) * var(--nbar));
+
+}
+
+
+
+.game_screen{
+
+    background: #000;
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+}
+
+
+.players{
+
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+
+}
+
+.players p{
+
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 0 0 10px var(--color);
+    position: relative;
+    transition: 0.7s;
+
+}
+
+.players p::after{
+
+    content: 'Jogador 1';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: var(--color);
+    filter: blur(15px);
+
+
+}
+
+.players p.active{
+
+    color: var(--color);
+
 }
