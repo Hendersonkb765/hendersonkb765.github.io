@@ -249,7 +249,6 @@ function limpar(){
     
 }
 function verificarVez(){
-    alert(click)
     if(jogador == 1 && click == false){
         player1.classList.remove('active')
         player2.classList.add('active')
